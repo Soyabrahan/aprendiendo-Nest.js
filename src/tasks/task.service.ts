@@ -1,15 +1,15 @@
 import { Injectable } from "@nestjs/common";
 
-@Injectable()
+@Injectable()    //decorador que indica que es un servicio y que se puede inyectar en otros modulos
 export class TasksService{
 
-    private tasks: any[] = [];
+    private tasks: any[] = [];   //array de tareas
 
-    getTasks(){
+    getTasks(){      //retorna todas las tareas
         return this.tasks;
     }
 
-    getTask(id : number){
+    getTask(id : number){   //retorna una tarea por id
         //buscamos la tarea por id
         const taskFound = this.tasks.find((task) => task.id === id);
 
@@ -19,26 +19,27 @@ export class TasksService{
         return taskFound;
     }
 
-    createTask(task :any)
+    createTask(task :any)  //crea una tarea
     {   
         console.log(task);
         this.tasks.push({
-            ...task,
-            id : this.tasks.length + 1,
+            ...task,  //destructuramos el objeto para que no se repita
+            id : this.tasks.length + 1,   //asignamos un id a la tarea
         });
         return task;
     }
 
-    updateTask(){
+    updateTask(){ //aun no se ha implementado
         return "Actualizando tarea";
     }
 
-    deleteTask(){
+    deleteTask(){ //aun no se ha implementado
+
         return "Borrando tarea";
     }
 
 
-    updateStatusTask(){
+    updateStatusTask(){ //aun no se ha implementado
         return "actualizando estado de tarea";
     }
 }

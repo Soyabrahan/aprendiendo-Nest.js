@@ -1,7 +1,9 @@
 import { Controller, Get,Post,Put,Delete,Patch,Body,Param } from "@nestjs/common";
 import { TasksService } from "./task.service";
 //en los controladores se aplica la logica es basicamente una funcion que se va a generar dependiendo la ruta que se llame
-@Controller("/tasks") // Path base
+@Controller("/tasks") // Path base       //decorador que indica que es un controlador
+//en el controlador se definen las rutas y los metodos http que se van a utilizar
+
 export class TasksController {
      //metodo contructor largo
      /*
